@@ -55,3 +55,15 @@ Nesta versão demonstrativa, os cadastros e avaliações são armazenados no pr�
 ## Desenvolvedor
 
 Projeto acadêmico desenvolvido para fins de aprendizagem e demonstração de conhecimentos em desenvolvimento web.
+
+
+
+## Melhorias futuras
+
+- Criar histórico de avaliações corporais.
+- Permitir acompanhar a evolução dos alunos.
+- Comparar resultados de diferentes avaliações.
+
+## Desenvolvimento
+
+Esta versão do projeto é demonstrativa e poderá receber novas funcionalidades futuramente.
