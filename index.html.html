@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <title>Corpo em Foco | Avaliação corporal</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--navy:#102a43;--blue:#1677ff;--muted:#62758a;--line:#e4ebf2;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:'DM Sans',sans-serif;min-height:100vh}
+.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(calc((100% - 1120px)/2),24px)}
+.brand{display:flex;gap:11px;align-items:center;text-decoration:none;color:var(--navy);font-weight:800;font-family:Manrope,sans-serif}.brand small{display:block;color:var(--muted);font:400 11px 'DM Sans',sans-serif;margin-top:2px}.brand-mark,.avatar{width:42px;height:42px;border-radius:13px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+main{max-width:1120px;margin:54px auto;padding:0 24px}.auth-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;min-height:590px}.intro{padding:20px 0}.eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:700;color:var(--blue)}h1,h2{font-family:Manrope,sans-serif}h1{font-size:clamp(34px,5vw,52px);line-height:1.12;letter-spacing:-1.8px;margin:18px 0}h1 em{font-style:normal;color:var(--blue)}.intro>p,.welcome p{color:var(--muted);line-height:1.7;max-width:460px}.demo-note{margin-top:36px;background:#eaf2ff;border:1px solid #d5e5ff;border-radius:14px;padding:17px 20px;line-height:1.8;color:#34516e;font-size:14px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 35px #1a36500a}.auth-panel{max-width:440px;width:100%;justify-self:end}.tabs{display:flex;border-bottom:1px solid var(--line);gap:24px;margin-bottom:26px}.tab{background:none;border:0;padding:0 0 13px;color:var(--muted);font:600 14px 'DM Sans';cursor:pointer}.tab.active{color:var(--blue);border-bottom:2px solid var(--blue)}h2{font-size:22px;margin:0 0 22px;letter-spacing:-.5px}label{display:block;font-size:13px;font-weight:600;margin:16px 0;color:#344e65}input,select{display:block;width:100%;margin-top:8px;border:1px solid #dbe4ed;border-radius:10px;padding:13px 14px;font:400 14px 'DM Sans';color:var(--navy);background:#fff;outline:none}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1677ff18}.btn{border:0;border-radius:10px;padding:13px 18px;font:700 14px 'DM Sans';cursor:pointer}.btn-primary{background:var(--blue);color:white}.btn-primary:hover{background:#0865e5}.btn-outline{background:#fff;border:1px solid var(--line);color:var(--navy)}.full{width:100%;margin-top:13px}.privacy,.disclaimer{font-size:11px;line-height:1.6;color:#8090a0;margin:19px 0 0}.message{font-size:12px;min-height:16px;color:#c0392b}.message.success{color:#16804a}.hidden{display:none!important}
+.dashboard{display:block}.welcome{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.welcome h1{font-size:34px;margin:10px 0}.welcome p{margin:0}.avatar{width:54px;height:54px;border-radius:17px;font-size:18px}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.section-heading h2{margin:7px 0 0}.step{font-size:11px;color:#93a2b1}.data-form{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.data-form .btn,.data-form .message{grid-column:1/-1}.result-panel{background:linear-gradient(145deg,#fff,#f8fbff);text-align:center}.result-panel>.eyebrow{display:block;text-align:left}.result-panel h2{margin:8px 0 15px}.result-circle{width:174px;height:174px;border-radius:50%;margin:20px auto;background:conic-gradient(var(--blue) 0deg 220deg,#e6eef8 220deg);display:grid;place-items:center;position:relative}.result-circle:before{content:"";position:absolute;inset:11px;background:white;border-radius:50%}.result-circle>div{position:relative;display:flex;flex-direction:column}.result-circle strong{font:800 34px Manrope}.result-circle small{font-size:11px;color:var(--muted)}.result-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result-stats div{background:#f1f6fc;padding:13px;border-radius:11px}.result-stats span,.result-stats strong{display:block}.result-stats span{font-size:11px;color:var(--muted);margin-bottom:5px}.result-stats strong{font-size:15px}.result-advice{font-size:13px;color:#526a80;line-height:1.6}.disclaimer{text-align:left;border-top:1px solid var(--line);padding-top:13px}.history-panel{margin-top:22px}.history-panel h2{margin-bottom:0}.last-record{color:var(--muted);font-size:14px;margin:0}footer{text-align:center;padding:26px;color:#8a99a8;font-size:11px}
+@media(max-width:760px){main{margin:28px auto}.auth-layout{grid-template-columns:1fr;gap:24px;min-height:0}.intro{padding:10px 0}.intro h1{font-size:38px}.auth-panel{justify-self:stretch;max-width:none}.content-grid{grid-template-columns:1fr}.welcome h1{font-size:28px}.panel{padding:22px}}@media(max-width:420px){.data-form{grid-template-columns:1fr}.data-form .btn,.data-form .message{grid-column:auto}}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">CF</span><span>Corpo em Foco<small>Auxílio e acompanhamento</small></span></a>
+    <button id="logoutBtn" class="btn btn-outline hidden">Sair</button>
+  </header>
+
+  <main>
+    <section id="authView" class="auth-layout">
+      <div class="intro">
+        <span class="eyebrow">BEM-VINDO(A)</span>
+        <h1>Cuide do seu progresso,<br><em>um passo de cada vez.</em></h1>
+        <p>Uma ferramenta simples para registrar seus dados e acompanhar uma estimativa da composição corporal.</p>
+        <div class="demo-note"><strong>Acesso para demonstração</strong><br>E-mail: demo@corpoemfoco.com<br>Senha: aluno123</div>
+      </div>
+      <div class="panel auth-panel">
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Entrar</button>
+          <button class="tab" data-tab="register">Cadastrar aluno</button>
+        </div>
+        <form id="loginForm">
+          <h2>Acesse sua conta</h2>
+          <label>E-mail<input type="email" id="loginEmail" placeholder="seuemail@exemplo.com" required></label>
+          <label>Senha<input type="password" id="loginPassword" placeholder="Sua senha" required></label>
+          <button class="btn btn-primary full" type="submit">Entrar</button>
+          <p id="loginMessage" class="message" aria-live="polite"></p>
+        </form>
+        <form id="registerForm" class="hidden">
+          <h2>Cadastro do aluno</h2>
+          <label>Nome completo<input id="registerName" type="text" placeholder="Nome do aluno" required></label>
+          <label>E-mail<input id="registerEmail" type="email" placeholder="seuemail@exemplo.com" required></label>
+          <label>Senha<input id="registerPassword" type="password" minlength="6" placeholder="Mínimo de 6 caracteres" required></label>
+          <button class="btn btn-primary full" type="submit">Criar cadastro</button>
+          <p id="registerMessage" class="message" aria-live="polite"></p>
+        </form>
+        <p class="privacy">Demonstração acadêmica: os cadastros ficam salvos somente neste navegador.</p>
+      </div>
+    </section>
+
+    <section id="appView" class="dashboard hidden">
+      <div class="welcome">
+        <div><span class="eyebrow">ÁREA DO ALUNO</span><h1>Olá, <span id="studentName">Aluno</span>!</h1><p>Preencha seus dados para gerar uma estimativa.</p></div>
+        <div class="avatar">CF</div>
+      </div>
+      <div class="content-grid">
+        <section class="panel">
+          <div class="section-heading"><div><span class="eyebrow">SEUS DADOS</span><h2>Avaliação corporal</h2></div><span class="step">01 / 02</span></div>
+          <form id="assessmentForm" class="data-form">
+            <label>Idade (anos)<input type="number" id="age" min="18" max="100" placeholder="Ex.: 25" required></label>
+            <label>Altura (cm)<input type="number" id="height" min="120" max="230" placeholder="Ex.: 175" required></label>
+            <label>Peso (kg)<input type="number" id="weight" min="30" max="300" step="0.1" placeholder="Ex.: 75.5" required></label>
+            <label>Sexo biológico usado na fórmula
+              <select id="sex" required><option value="">Selecione</option><option value="1">Masculino</option><option value="0">Feminino</option></select>
+            </label>
+            <button class="btn btn-primary full" type="submit">Calcular estimativa</button>
+            <p id="assessmentMessage" class="message" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="panel result-panel">
+          <span class="eyebrow">SEU RESULTADO</span>
+          <h2>Estimativa de gordura corporal</h2>
+          <div class="result-circle"><div><strong id="bodyFat">--%</strong><small>estimativa</small></div></div>
+          <div class="result-stats">
+            <div><span>IMC</span><strong id="bmi">--</strong></div>
+            <div><span>Classificação do IMC</span><strong id="bmiClass">--</strong></div>
+          </div>
+          <p id="resultAdvice" class="result-advice">Informe seus dados e clique em calcular para visualizar o resultado.</p>
+          <p class="disclaimer">A estimativa usa uma fórmula baseada em IMC, idade e sexo. Não é uma medição direta de gordura corporal nem substitui avaliação de profissional de saúde.</p>
+        </section>
+      </div>
+      <section class="panel history-panel">
+        <div class="section-heading"><div><span class="eyebrow">ACOMPANHAMENTO</span><h2>Último registro</h2></div></div>
+        <p id="lastRecord" class="last-record">Você ainda não realizou uma avaliação.</p>
+      </section>
+    </section>
+  </main>
+  <footer>Corpo em Foco · Projeto demonstrativo</footer>
+  <script>
+const DEMO_EMAIL = "demo@corpoemfoco.com";
+const DEMO_PASSWORD = "aluno123";
+const $ = (id) => document.getElementById(id);
+let currentUser = null;
+
+function getUsers(){ return JSON.parse(localStorage.getItem("cf_users") || "[]"); }
+function saveUsers(users){ localStorage.setItem("cf_users", JSON.stringify(users)); }
+function showMessage(id, text, success=false){ const el=$(id); el.textContent=text; el.className="message"+(success?" success":""); }
+
+function switchTab(tab){
+  $("loginForm").classList.toggle("hidden", tab!=="login");
+  $("registerForm").classList.toggle("hidden", tab!=="register");
+  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
+
+function enterApp(user){
+  currentUser=user;
+  $("authView").classList.add("hidden"); $("appView").classList.remove("hidden");
+  $("logoutBtn").classList.remove("hidden"); $("studentName").textContent=user.name.split(" ")[0];
+  loadLastRecord();
+}
+$("logoutBtn").addEventListener("click",()=>{
+  currentUser=null; $("appView").classList.add("hidden"); $("authView").classList.remove("hidden");
+  $("logoutBtn").classList.add("hidden"); $("assessmentForm").reset();
+});
+
+$("loginForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const email=$("loginEmail").value.trim().toLowerCase(), password=$("loginPassword").value;
+  if(email===DEMO_EMAIL && password===DEMO_PASSWORD){enterApp({name:"Aluno Demonstração",email,isDemo:true});return;}
+  const user=getUsers().find(u=>u.email===email && u.password===password);
+  if(user) enterApp(user); else showMessage("loginMessage","E-mail ou senha incorretos.");
+});
+
+$("registerForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("registerName").value.trim(), email=$("registerEmail").value.trim().toLowerCase(), password=$("registerPassword").value;
+  const users=getUsers();
+  if(email===DEMO_EMAIL || users.some(u=>u.email===email)){showMessage("registerMessage","Este e-mail já está cadastrado.");return;}
+  const user={name,email,password};
+  users.push(user); saveUsers(users);
+  showMessage("registerMessage","Cadastro criado! Você já pode entrar.",true);
+  $("registerForm").reset(); switchTab("login"); $("loginEmail").value=email;
+});
+
+function classifyBMI(bmi){
+  if(bmi<18.5)return "Abaixo do peso";
+  if(bmi<25)return "Peso adequado";
+  if(bmi<30)return "Sobrepeso";
+  if(bmi<35)return "Obesidade I";
+  if(bmi<40)return "Obesidade II";
+  return "Obesidade III";
+}
+$("assessmentForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  if(!currentUser)return;
+  const age=Number($("age").value), heightCm=Number($("height").value), weight=Number($("weight").value), sex=$("sex").value;
+  if(age<18 || age>100 || heightCm<120 || heightCm>230 || weight<30 || weight>300 || sex===""){
+    showMessage("assessmentMessage","Confira os dados informados. Esta demonstração atende adultos de 18 a 100 anos.");return;
+  }
+  const height=heightCm/100, bmi=weight/(height*height);
+  // Fórmula de Deurenberg: estimativa populacional baseada em IMC, idade e sexo.
+  const fat=1.2*bmi+0.23*age-10.8*Number(sex)-5.4;
+  const result=Math.max(0,Math.min(60,fat));
+  $("bodyFat").textContent=result.toFixed(1).replace(".",",")+"%";
+  $("bmi").textContent=bmi.toFixed(1).replace(".",",");
+  $("bmiClass").textContent=classifyBMI(bmi);
+  $("resultAdvice").textContent="Resultado aproximado calculado com os dados informados. Acompanhe tendências ao longo do tempo, sem usar este número como diagnóstico.";
+  $("assessmentMessage").textContent="Estimativa calculada com sucesso."; $("assessmentMessage").className="message success";
+  const record={age,heightCm,weight,bmi:bmi.toFixed(1),fat:result.toFixed(1),date:new Date().toLocaleDateString("pt-BR")};
+  if(!currentUser.isDemo){
+    const all=JSON.parse(localStorage.getItem("cf_records")||"{}"); all[currentUser.email]=record; localStorage.setItem("cf_records",JSON.stringify(all));
+  } else localStorage.setItem("cf_demo_record",JSON.stringify(record));
+  $("lastRecord").textContent=`${record.date} · ${weight.toFixed(1).replace(".",",")} kg · IMC ${record.bmi.replace(".",",")} · Gordura estimada ${record.fat.replace(".",",")}%`;
+});
+function loadLastRecord(){
+  const all=JSON.parse(localStorage.getItem("cf_records")||"{}");
+  const record=currentUser.isDemo?JSON.parse(localStorage.getItem("cf_demo_record")||"null"):all[currentUser.email];
+  $("lastRecord").textContent=record?`${record.date} · ${Number(record.weight).toFixed(1).replace(".",",")} kg · IMC ${String(record.bmi).replace(".",",")} · Gordura estimada ${String(record.fat).replace(".",",")}%`:"Você ainda não realizou uma avaliação.";
+}
+
+  </script>
+</body>
+</html>
